@@ -6,12 +6,14 @@ import discord
 
 from pydactyl import PterodactylClient
 
-api = PterodactylClient(os.environ["DOMAIN"], os.environ["API"])
-
-serveruuid = os.environ["SERVERUUID"]
-
 # .envファイルの内容を読み込見込む
 load_dotenv()
+
+# Pterodactylを読み込み
+api = PterodactylClient(os.environ["DOMAIN"], os.environ["API"])
+
+# UUIDを読み込み
+serveruuid = os.environ["SERVERUUID"]
 
 intents = discord.Intents.default()
 intents.message_content = True
