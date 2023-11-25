@@ -18,7 +18,7 @@
 # Discordのトークン
 DISTOKEN=1234567890
 # 動作させるサーバーのドメイン
-DOMAIN=http ://huahua.hua
+DOMAIN=http://huahua.hua
 # APIキー
 API=1234567890
 # サーバーのUUID
