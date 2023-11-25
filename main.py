@@ -4,6 +4,12 @@ from wakeonlan import send_magic_packet
 
 import discord
 
+from pydactyl import PterodactylClient
+
+api = PterodactylClient(os.environ["DOMAIN"], os.environ["API"])
+
+serveruuid = os.environ["SERVERUUID"]
+
 # .envファイルの内容を読み込見込む
 load_dotenv()
 
@@ -27,21 +33,17 @@ async def on_message(message):
 
     # サーバー起動
     if message.content.startswith("$サーバーを起動して"):
-        send_magic_packet(os.environ["WOL"])
+        api.client.servers.send_power_action(serveruuid, "start")
         await message.channel.send("サーバーを起動しました")
 
     # サーバー停止
     if message.content.startswith("$サーバーを停止して"):
-        os.system(
-            f"sshpass -p {os.environ['RPASSWD']} ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null {os.environ['RUSERNAME']}@{os.environ['SSH']} 'echo {os.environ['RPASSWD']} | sudo -S shutdown -h now'"
-        )
+        api.client.servers.send_power_action(serveruuid, "stop")
         await message.channel.send("サーバーを停止しました")
 
     # サーバー再起動
     if message.content.startswith("$サーバーを再起動して"):
-        os.system(
-            f"sshpass -p {os.environ['RPASSWD']} ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null {os.environ['RUSERNAME']}@{os.environ['SSH']} 'echo {os.environ['RPASSWD']} | sudo -S reboot'"
-        )
+        api.client.servers.send_power_action(serveruuid, "restart")
         await message.channel.send("サーバーを再起動しました")
 
 

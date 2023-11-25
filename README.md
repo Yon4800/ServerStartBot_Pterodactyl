@@ -4,7 +4,7 @@
 - このBotを**悪用**しないでください。
 
 # スペシャルサンクス
-- wakeonlan
+- py-dactyl
 - discordドットpy
 - python-dotenv
 
@@ -15,13 +15,12 @@
 
 .envファイルのいじり方
 ```例
-# 動作させるサーバーのMACアドレス
-WOL=ff:ff:ff:ff:ff
 # Discordのトークン
-DISTOKEN=????????
-# 動作させるサーバーのIP
-SSH=192.168.88.88
-# 動作させるサーバーのユーザネーム、パスワード
-RUSERNAME=Test
-RPASSWD=Test
+DISTOKEN=1234567890
+# 動作させるサーバーのドメイン
+DOMAIN=http ://huahua.hua
+# APIキー
+API=1234567890
+# サーバーのUUID
+SERVERUUID=1234567890
 ```
