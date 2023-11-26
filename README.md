@@ -17,7 +17,7 @@
 ```例
 # Discordのトークン
 DISTOKEN=1234567890
-# 動作させるサーバーのドメイン
+# Pterodactyl Webサーバーのドメイン
 DOMAIN=http://huahua.hua
 # クライアントAPIキー(PterodactylアカウントのAPI Credentialsにあります)
 API=1234567890
