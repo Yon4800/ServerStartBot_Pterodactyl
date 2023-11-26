@@ -1,6 +1,5 @@
 import os
 from dotenv import load_dotenv
-from wakeonlan import send_magic_packet
 
 import discord
 
