@@ -19,7 +19,7 @@
 DISTOKEN=1234567890
 # 動作させるサーバーのドメイン
 DOMAIN=http://huahua.hua
-# クライアントAPIキー
+# クライアントAPIキー(PterodactylアカウントのAPI Credentialsにあります)
 API=1234567890
 # サーバーのUUID
 SERVERUUID=1234567890
